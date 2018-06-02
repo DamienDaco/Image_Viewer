@@ -27,32 +27,25 @@ class ExternalUi(QtWidgets.QMainWindow):
         # See retranslate_ui() for names..
         self.retranslate_ui(self)
 
+    def retranslate_ui(self, MainWindow):
+        _translate = QtCore.QCoreApplication.translate
+        self.ui.test_button.setText(_translate("MainWindow", "Test"))
+
     def open_file_in_viewer(self):
         # Careful, in PyQT5, getopenfilename returns a tuple! We must use the first element [0]
         self.fname = QtWidgets.QFileDialog.getOpenFileName(self, 'Open file')[0]
         print("File name is %s" % self.fname)
         self.image_viewer.open(self.fname)
 
-    def retranslate_ui(self, MainWindow):
-        _translate = QtCore.QCoreApplication.translate
-        self.ui.test_button.setText(_translate("MainWindow", "Test"))
-
 
 class ImageViewer(QtWidgets.QMainWindow):
     def __init__(self, parent=None):
         QtWidgets.QWidget.__init__(self, parent)
 
-        # self.scale_factor = 1.0
-
         self.image_label = QtWidgets.QLabel()
         self.image_label.setBackgroundRole(QtGui.QPalette.Base)
         self.image_label.setSizePolicy(QtWidgets.QSizePolicy.Ignored, QtWidgets.QSizePolicy.Ignored)
         self.image_label.setScaledContents(True)
-
-        # Old code from Sparta:
-        # self.scroll_area = QtWidgets.QScrollArea()
-        # self.scroll_area.setBackgroundRole(QtGui.QPalette.Dark)
-        # self.scroll_area.setWidget(self.image_label)
 
     def open(self, filename):
         if filename:
@@ -62,10 +55,4 @@ class ImageViewer(QtWidgets.QMainWindow):
                 return
             self.image_label.setPixmap(QtGui.QPixmap(image))
 
-            # Old code from Sparta:
-            # self.scale_factor = 1.0
-            # self.fit_to_window()
-
-    # def fit_to_window(self, fit=True):
-        # self.scroll_area.setWidgetResizable(fit)
 
