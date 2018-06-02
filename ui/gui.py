@@ -1,0 +1,92 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'gui.ui'
+#
+# Created by: PyQt5 UI code generator 5.7
+#
+# WARNING! All changes made in this file will be lost!
+
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(800, 600)
+        self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget.setObjectName("centralwidget")
+        self.gridLayout = QtWidgets.QGridLayout(self.centralwidget)
+        self.gridLayout.setObjectName("gridLayout")
+        self.global_frame = QtWidgets.QFrame(self.centralwidget)
+        self.global_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.global_frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.global_frame.setObjectName("global_frame")
+        self.verticalLayout = QtWidgets.QVBoxLayout(self.global_frame)
+        self.verticalLayout.setObjectName("verticalLayout")
+        self.top_frame = QtWidgets.QFrame(self.global_frame)
+        self.top_frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.top_frame.setObjectName("top_frame")
+        self.gridLayout_2 = QtWidgets.QGridLayout(self.top_frame)
+        self.gridLayout_2.setObjectName("gridLayout_2")
+        self.splitter = QtWidgets.QSplitter(self.top_frame)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.splitter.sizePolicy().hasHeightForWidth())
+        self.splitter.setSizePolicy(sizePolicy)
+        self.splitter.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.splitter.setOrientation(QtCore.Qt.Horizontal)
+        self.splitter.setOpaqueResize(True)
+        self.splitter.setHandleWidth(2)
+        self.splitter.setChildrenCollapsible(True)
+        self.splitter.setObjectName("splitter")
+        self.image_viewer_frame = QtWidgets.QFrame(self.splitter)
+        self.image_viewer_frame.setMinimumSize(QtCore.QSize(500, 300))
+        self.image_viewer_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.image_viewer_frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.image_viewer_frame.setObjectName("image_viewer_frame")
+        self.options_frame = QtWidgets.QFrame(self.splitter)
+        self.options_frame.setMinimumSize(QtCore.QSize(50, 0))
+        self.options_frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.options_frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.options_frame.setObjectName("options_frame")
+        self.gridLayout_3 = QtWidgets.QGridLayout(self.options_frame)
+        self.gridLayout_3.setObjectName("gridLayout_3")
+        self.demo2_button = QtWidgets.QPushButton(self.options_frame)
+        self.demo2_button.setObjectName("demo2_button")
+        self.gridLayout_3.addWidget(self.demo2_button, 1, 0, 1, 1)
+        self.open_button = QtWidgets.QPushButton(self.options_frame)
+        self.open_button.setObjectName("open_button")
+        self.gridLayout_3.addWidget(self.open_button, 0, 0, 1, 1)
+        self.demo1_button = QtWidgets.QPushButton(self.options_frame)
+        self.demo1_button.setObjectName("demo1_button")
+        self.gridLayout_3.addWidget(self.demo1_button, 0, 1, 1, 1)
+        self.demo3_button = QtWidgets.QPushButton(self.options_frame)
+        self.demo3_button.setObjectName("demo3_button")
+        self.gridLayout_3.addWidget(self.demo3_button, 1, 1, 1, 1)
+        self.gridLayout_2.addWidget(self.splitter, 0, 0, 1, 1)
+        self.verticalLayout.addWidget(self.top_frame)
+        self.bottom_frame = QtWidgets.QFrame(self.global_frame)
+        self.bottom_frame.setFrameShape(QtWidgets.QFrame.Panel)
+        self.bottom_frame.setObjectName("bottom_frame")
+        self.verticalLayout.addWidget(self.bottom_frame)
+        self.gridLayout.addWidget(self.global_frame, 0, 0, 1, 1)
+        MainWindow.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(MainWindow)
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 30))
+        self.menubar.setObjectName("menubar")
+        MainWindow.setMenuBar(self.menubar)
+        self.statusbar = QtWidgets.QStatusBar(MainWindow)
+        self.statusbar.setObjectName("statusbar")
+        MainWindow.setStatusBar(self.statusbar)
+
+        self.retranslateUi(MainWindow)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    def retranslateUi(self, MainWindow):
+        _translate = QtCore.QCoreApplication.translate
+        MainWindow.setWindowTitle(_translate("MainWindow", "Image Viewer"))
+        self.demo2_button.setText(_translate("MainWindow", "Demo2"))
+        self.open_button.setText(_translate("MainWindow", "Open"))
+        self.demo1_button.setText(_translate("MainWindow", "Demo1"))
+        self.demo3_button.setText(_translate("MainWindow", "Demo3"))
+
